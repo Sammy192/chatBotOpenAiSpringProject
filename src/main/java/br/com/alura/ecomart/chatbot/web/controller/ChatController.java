@@ -34,7 +34,8 @@ public class ChatController {
 
     @GetMapping("limpar")
     public String limparConversa() {
-        return PAGINA_CHAT;
+        chatbotService.limparHistorico();
+        return "redirect:/chat";
     }
 
 }

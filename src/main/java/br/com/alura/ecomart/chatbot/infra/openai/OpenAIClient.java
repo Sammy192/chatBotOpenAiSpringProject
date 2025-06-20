@@ -86,4 +86,11 @@ public class OpenAIClient {
 
         return mensagens;
     }
+
+    public void limparHistorico() {
+        if (Objects.nonNull(threadId)) {
+            service.deleteThread(threadId);
+            this.threadId = null;
+        }
+    }
 }
